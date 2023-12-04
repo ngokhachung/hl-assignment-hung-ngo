@@ -1,0 +1,21 @@
+﻿@model Joke
+<div class="row">
+    <div class="banner">
+        <h1>A joke a day keeps the docter away</h1>
+        <h3>If you joke wrong way, your teeth have to pay. (Serious)</h3>
+    </div>
+    <div class="content row">
+        <div class="text col-md-7">
+            <p>@Model.Text</p>
+        </div>
+        <div class="selections col-md-7">
+            <form asp-action="Vote" method="post">
+                <input type="hidden" name="id" value="@Model.Id" />
+                <button class="btn-primary" type="submit" name="voteType" value="like">
+                    This is Funny!
+                </button>
+                <button class="btn-success" type="submit" name="voteType" value="dislike">This is not Funny!</button>
+            </form>
+        </div>
+    </div>
+</div>
